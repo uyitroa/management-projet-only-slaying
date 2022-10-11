@@ -42,7 +42,6 @@ def function_to_optimize(v):
         
 
 def create_random_vector(vector_space): # create a random vector
-    return [3, 0, 0, 0, 1, 0, 0, 2, 0, 1, 0, 1, 3, 2, 2, 0, 2, 1, 0, 0]
     res = []
     for space in vector_space:
             res.append(space[0])
@@ -98,6 +97,10 @@ def get_next_answers(last_vector_candidate, last_last_score_candidate, last_scor
 
 if __name__ == "__main__":
     last_vector_candidate = create_random_vector(VECTOR_SPACE)
+
+    attempt = start(sesskey)
+    submit(attempt, sesskey) # submit any unfinished previous session
+
     attempt = start(sesskey)
     sendresponses([i+1 for i in range(20)], answerid, last_vector_candidate, attempt, sesskey)
     submit(attempt, sesskey)
