@@ -1,4 +1,7 @@
 # fuck-centrale
+
+Brute force Management de projet QCM
+
 ## Requirements:
 
 ```
