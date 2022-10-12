@@ -2,12 +2,6 @@ from copy import deepcopy
 from time import sleep
 from getshit import *
 
-# ============================================================ #
-
-PRINTING = True
-SLEEPING = True
-
-# MODIFIER VECTOR_SPACE EN ACCORD AVEC L'ORDRE ET LE CONTENU DE VOS QUESTIONS : 
 VECTOR_SPACE = [
     [0, 1, 2, 3],   # discrete, example QCM à 4 choix
     (0, 30),   # discrete
@@ -30,18 +24,9 @@ VECTOR_SPACE = [
     (0, 30),# continuous, example valeur entre 0 et 28 inclus (entiers)  
     (0, 30)
 ]
-# ============================================================ #
 
 
-
-
-
-
-def function_to_optimize(v):
-    return sum([int(i == v[i]) for i in range(len(v))])
-        
-
-def create_random_vector(vector_space): # create a random vector
+def create_initial_vector(vector_space): # create a random vector
     res = []
     for space in vector_space:
             res.append(space[0])
@@ -65,8 +50,8 @@ def modify_component_vector(new_vector, component):
 
 
 best_score = - float('inf')
-best_vector = create_random_vector(VECTOR_SPACE)
-vector_candidate = create_random_vector(VECTOR_SPACE)
+best_vector = create_initial_vector(VECTOR_SPACE)
+vector_candidate = create_initial_vector(VECTOR_SPACE)
 question = 0
 
 
@@ -96,7 +81,7 @@ def get_next_answers(last_vector_candidate, last_last_score_candidate, last_scor
 #     return score
 
 if __name__ == "__main__":
-    last_vector_candidate = create_random_vector(VECTOR_SPACE)
+    last_vector_candidate = create_initial_vector(VECTOR_SPACE)
 
     attempt = start(sesskey)
     submit(attempt, sesskey) # submit any unfinished previous session
