@@ -1,4 +1,4 @@
-# fuck-centrale
+# management-projet-only-slaying
 
 Brute force Management de projet QCM
 
@@ -14,7 +14,7 @@ pip install -r requirements.txt
 Modify `config.json` file to your account.
 
 ```
-cd fuck-centrale
+cd management-projet-only-slaying
 python algo.py
 ```
 
