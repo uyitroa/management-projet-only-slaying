@@ -1,4 +1,4 @@
-# fuck-centrale
+# management-projet-only-slaying
 
 Brute force Management de projet QCM
 
