@@ -83,11 +83,10 @@ def get_next_answers(last_vector_candidate, last_last_score_candidate, last_scor
 if __name__ == "__main__":
     last_vector_candidate = create_initial_vector(VECTOR_SPACE)
 
-    attempt = start(sesskey)
-    sendresponses([i+1 for i in range(20)], answerid, last_vector_candidate, attempt, sesskey)
+    attempt, answerid = start(sesskey)
     submit(attempt, sesskey) # submit any unfinished previous session
 
-    attempt = start(sesskey)
+    attempt, answerid = start(sesskey)
     sendresponses([i+1 for i in range(20)], answerid, last_vector_candidate, attempt, sesskey)
     submit(attempt, sesskey)
     last_score_candidate = getscore(sesskey) 
