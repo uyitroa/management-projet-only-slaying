@@ -84,6 +84,7 @@ if __name__ == "__main__":
     last_vector_candidate = create_initial_vector(VECTOR_SPACE)
 
     attempt = start(sesskey)
+    sendresponses([i+1 for i in range(20)], answerid, last_vector_candidate, attempt, sesskey)
     submit(attempt, sesskey) # submit any unfinished previous session
 
     attempt = start(sesskey)
